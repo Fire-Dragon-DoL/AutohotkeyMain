@@ -61,30 +61,3 @@ Return
 WinSet, Style, -0xC00000,a ; remove the titlebar and border(s)
 WinMove, a, , 0, 0, 1920, 1080 ; move the window to 0,0 and resize it to 1920X1080
 Return
-
-; Script: Multidesktop Management
-
-#1::
-  Send #^{F1}
-  Return
-#2::
-  Send #^{F2}
-  Return
-#3::
-  Send #^{F3}
-  Return
-#4::
-  Send #^{F4}
-  Return
-#5::
-  Send #^{F5}
-  Return
-#6::
-  Send #^{F6}
-  Return
-#xbutton1::
-  Send #^{F7}
-  Return
-#xbutton2::
-  Send #^{F8}
-  Return
