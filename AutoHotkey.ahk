@@ -56,6 +56,12 @@ HideShell()
   }
 Return
 
+;RESIZING
+#^F9::
+WinSet, Style, -0xC00000,a ; remove the titlebar and border(s)
+WinMove, a, , 0, 0, 1920, 1080 ; move the window to 0,0 and resize it to 1920X1080
+Return
+
 ; Script: Multidesktop Management
 
 #1::
