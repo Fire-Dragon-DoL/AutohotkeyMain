@@ -58,6 +58,15 @@ Return
 
 ;RESIZING
 #^F9::
-WinSet, Style, -0xC00000,a ; remove the titlebar and border(s)
-WinMove, a, , 0, 0, 1920, 1080 ; move the window to 0,0 and resize it to 1920X1080
-Return
+  WinSet, Style, -0xC00000,a ; remove the titlebar and border(s)
+  WinMove, a, , 0, 0, 1920, 1080 ; move the window to 0,0 and resize it to 1920X1080
+  Return
+
+#^F8::
+  WinGet, currentWindow, ID, A
+  WinGet, ExStyle, ExStyle, ahk_id %currentWindow%
+  If (ExStyle & 0x8)  ; 0x8 is WS_EX_TOPMOST.
+    Winset, AlwaysOnTop, off, ahk_id %currentWindow%
+  Else
+    WinSet, AlwaysOnTop, on, ahk_id %currentWindow%
+  Return
